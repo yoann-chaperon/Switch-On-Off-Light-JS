@@ -1,0 +1,16 @@
+//------- VARIABLE RESPONSIVE @MEDIA QUERY -----//
+
+//----------- valeurs breakpoint -------------//
+
+$medium: 768px!default;
+$large: 1000px!default;
+
+//-------------- Only screen ----------------//
+
+//-- Medium -
+$medium-up: "only screen and (min-width: #{$medium})";
+$medium-down: "only screen and (max-width: #{$medium})";
+
+//-- Large -
+$large-up: "only screen and (min-width: #{$large})";
+$large-down: "only screen and (max-width: #{$large})";

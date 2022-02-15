@@ -1,0 +1,37 @@
+@mixin triangle($color: #fff, $size: 10px) {
+    &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-top: $size solid $color;
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        position: absolute;
+        bottom: $size * -1;
+        left: calc(50% - #{$size});
+    }
+}
+@mixin display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin displayJA($size) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $size;
+}
+
+@mixin displayJ($size) {
+    display: flex;
+    justify-content: center;
+    height: $size;
+}
+
+@mixin displayA($size) {
+    display: flex;
+    align-items: center;
+    height: $size;
+}

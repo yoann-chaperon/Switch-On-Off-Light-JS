@@ -1,0 +1,23 @@
+// import
+@import "libs/color.scss";
+@import "libs/responsive.scss";
+@import "libs/reset.scss";
+@import "libs/mixins.scss";
+@import "libs/function.scss";
+@import "libs/font.scss";
+
+//---- COLOR -----//
+$color1: #2f363e;
+$color2: rgba(255, 255, 255, 0.2);
+$color3: #fff;
+$color4: #bcbcc0;
+$color5:#95999D;
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: $color1;
+    //font-family: "Poppins", sans-serif;
+}

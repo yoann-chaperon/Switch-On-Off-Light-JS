@@ -1,0 +1,50 @@
+//------ FONCTION REM/EM --------------//
+$base-font-size: 16px !default;
+
+//--- STRIP-UNiT
+@function strip-unit($number) {
+    @if type-of($number) == "number" and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+//--- REM --
+@function rem($size, $base: $base-font-size) {
+    @return 1rem * $size / strip-unit($base);
+}
+//--- EM --
+@function em($size, $base: $base-font-size) {
+    @return 1em * $size / strip-unit($base);
+}
+
+
+
+
+//========================================//
+//--- COLOR WHITE / BLACK FOR BUTTON ----//
+// @if (lightness($primaryBlue) > 50%) {
+//     color: #000;
+// } @else {
+//     color: #fff;
+// }
+//=======================================//
+//=======================================//
+//---- EXEMPLE DE TABLEAU VARIABLE ------//
+// $categories:
+//     chien #ceb1b1,
+//     poisson #006eff,
+//     chat rgb(255, 136, 0);
+
+// @each $category in $categories {
+//     .#{nth($category, 1)} {
+//         background: nth($category, 2);
+    
+//     @if (lightness(nth($category, 2)) > 50%) {
+//             color: #000;
+//             } @else {
+//             color: #fff;
+//         }
+//     }
+// }
+//=========================================//
