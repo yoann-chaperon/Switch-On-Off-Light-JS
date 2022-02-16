@@ -1,23 +1,68 @@
 // import
 @import "libs/color.scss";
-@import "libs/responsive.scss";
 @import "libs/reset.scss";
 @import "libs/mixins.scss";
-@import "libs/function.scss";
 @import "libs/font.scss";
 
+
 //---- COLOR -----//
-$color1: #2f363e;
+$color1: #222;
 $color2: rgba(255, 255, 255, 0.2);
-$color3: #fff;
-$color4: #bcbcc0;
-$color5:#95999D;
+$color3: #000;
+$color4: #444;
+$color5:#f00;
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include display;
     min-height: 100vh;
     background: $color1;
-    //font-family: "Poppins", sans-serif;
+}
+
+.buld {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: $color4;
+    border-radius: 50%;
+    &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: 22.5px;
+        width: 35px;
+        height: 80px;
+        background: $color4;
+        border-top: 30px solid $color3;
+        border-radius: 10px;
+        z-index: 1;
+    }
+    & span:nth-child(1) {
+        position: absolute;
+        top: -16px;
+        left: -4px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        transform: rotate(344deg);
+        border-bottom-right-radius: 40px;
+        box-shadow: 20px 20px 0 10px $color4;
+    }
+    & span:nth-child(2) {
+        position: absolute;
+        top: -16px;
+        right: -4px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        transform: rotate(16deg);
+        border-bottom-left-radius: 40px;
+        box-shadow: -20px 20px 0 10px $color4;
+    }
+}
+.wire {
+    position: absolute;
+    width: 4px;
+    height: 60vh;
 }
