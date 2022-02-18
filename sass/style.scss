@@ -1,16 +1,15 @@
 // import
-@import "libs/color.scss";
 @import "libs/reset.scss";
 @import "libs/mixins.scss";
-@import "libs/font.scss";
-
 
 //---- COLOR -----//
 $color1: #222;
-$color2: rgba(255, 255, 255, 0.2);
+$color2: #FFF;
 $color3: #000;
 $color4: #444;
-$color5:#f00;
+$color5: linear-gradient(#eee, #ccc, #eee);
+$color6: linear-gradient(#777, #fff, #777);
+$color7: linear-gradient(#fff, #fff);
 
 body {
     @include display;
@@ -24,8 +23,9 @@ body {
     height: 80px;
     background: $color4;
     border-radius: 50%;
+    z-index: 2;
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: -50%;
         left: 22.5px;
@@ -34,7 +34,7 @@ body {
         background: $color4;
         border-top: 30px solid $color3;
         border-radius: 10px;
-        z-index: 1;
+        z-index: 2;
     }
     & span:nth-child(1) {
         position: absolute;
@@ -63,6 +63,79 @@ body {
 }
 .wire {
     position: absolute;
+    left: calc(50% - 2px);
+    bottom: 50%;
     width: 4px;
     height: 60vh;
+    background: $color3;
+    z-index: 1;
+}
+
+.switch {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 80px;
+    height: 80px;
+    background: $color5;
+    border: 3px solid $color3;
+    border-radius: 10px;
+    @include display;
+    & .btn {
+        position: relative;
+        width: 25px;
+        height: 40px;
+        background: $color6;
+        border: 2px solid $color3;
+        cursor: pointer;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 85%;
+            background: $color7;
+            border-radius: 4px;
+        }
+    }
+}
+.on .switch .btn::before {
+    top: 15%;
+}
+
+body.on .buld::after {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: $color2;
+    border-radius: 50%;
+    filter: blur(40px);
+    z-index: 3;
+}
+body.on .buld {
+    background: $color2;
+    box-shadow: 0 0 50px $color2,
+    0 0 100px $color2,
+    0 0 150px $color2,
+    0 0 200px $color2,
+    0 0 250px $color2,
+    0 0 300px $color2,
+    0 0 350px $color2;
+    &::before {
+        background: $color2;
+    }
+    & span:nth-child(1) {
+        box-shadow: 20px 20px 0 10px $color2;
+    }
+    & span:nth-child(2) {
+        box-shadow: -20px 20px 0 10px $color2;
+    }
+}
+#audio {
+    display: none;
 }
